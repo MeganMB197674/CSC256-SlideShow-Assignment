@@ -1,0 +1,235 @@
+/* Megan M Boyer - CSC256 Slideshow Assignment - 5/18/2023 */
+
+/*Styling for the entire HTML page*/
+html{
+  /*Give the entire page a photo background: sourced from unsplash copyright free*/
+background-image: url(Images/dulcey-lima-hr1smkEtjzI-unsplash.jpg);
+/*Turn off the image repeat*/
+background-repeat: no-repeat;
+/*Set the image to cover the entire page*/
+background-size: cover;
+}
+
+/*Styling for the main parent div/slideshow container*/
+.slideshowContainer{
+  /*Set width to 100% of the viewport*/
+   width: 100%;
+   /*Set height to 100% of the viewport*/
+   height:100%;
+}
+
+/*Styling for all slideshow images*/
+img{
+  /*Set image width in pixels*/
+    width: 650px;
+    /*Set image height in pixels*/
+    height: 650px;
+    /*Set margins (shorthand)*/
+    margin: 0 0 10px 20px;
+    /*Make position relative*/
+    position: relative;
+    /*Give images a border and specify color, style, and width*/
+    border: groove olivedrab 5px;
+    /*Make border corners rounded*/
+    border-radius: 10px;
+}
+
+/*Styling for the child divs: slide*/
+.slide{
+  /*Give slides a border and specify color, style, and width*/
+    border: solid olivedrab 3px;
+    /*Make border corners rounded*/
+    border-radius: 10px;
+    /*Use shorthand to set margins*/
+    margin: 10px 10px 10px 10px;
+    /*Hide the slides by default*/
+    display: none; 
+    /*Set a slightly transparent slide background color*/
+    background-color: #bbbbbb9f;
+}
+
+/*Styling for slide number text*/
+.slideNumber{
+  /*Set margins (shorthand)*/
+  margin: 5px 0 0 70%;
+    /*Set font size*/
+    font-size: 20px;
+    /*Set font weight to bold*/
+    font-weight: bolder;
+    /*Set text stroke and specify color and width*/
+    -webkit-text-stroke: white 0.1px;
+}
+
+/*Styling for all header 2 elements*/
+h2{
+  /*Switch from default block display to inline to create better flow*/
+    display: inline;
+    /*Set font family*/
+    font-family: Alumni;
+    /*Set font size*/
+    font-size: 40px;
+    /*Set font weight*/
+    font-weight: lighter;
+    /*Set position to absolute*/
+    position: absolute;
+    /*Specify width of h2 container - used to center the h2 content on page where desired*/
+    width: 50%;
+    /*Align text to the center of the centered h2 container*/
+    text-align: center;
+    /*give the h2 a border and specify the color, style, and width*/
+    border: 3px grey solid;
+    /*Make border corners curved*/
+    border-radius: 0px 5px 0px 5px;
+    /*Use shorthand to specify margins - these margins center the h2 container on the page where desired*/
+    margin: 5px 10px 5px 15px;
+    /*Set the color of the header text*/
+    color: olivedrab;
+    /*Set a background color to fill the h2 container - I used a radial/circle gradient*/
+    background-image: -webkit-radial-gradient(white, silver, grey) 
+}
+
+/*Styling for all h3 elements*/
+h3{
+  /*Set the width for the h3 container - used to center the element on the page where desired*/
+  width:100%;
+  /*Specify margins using shorthand to help center the h2 container*/
+  margin: 15px 10px 0px 10px;
+  /*Align h3 text to center of centered container*/
+  text-align: center;
+}
+
+/*Styling for next & previous buttons*/
+.prev, .next {
+  /*When hovering over the buttons, change cursor style*/
+    cursor: pointer;
+    /*Make position absolute*/
+    position: absolute;
+    /*Set top margin*/
+    top: 85%; 
+    /*Set width of buttons*/
+    width: auto;
+    /*Set padding (shorthand)*/
+    padding: 16px;
+    /*Set color of buttons*/
+    color:green;
+    /*Give buttons an outline and specify color and width*/
+    -webkit-text-stroke: white 0.3px;
+    /*Make buttons bold*/
+    font-weight: bold;
+    /*Set size of buttons*/
+    font-size: 30px;
+    /*Set a transition for when user hovers over buttons*/
+    transition: 0.6s ease;
+    /*Make button container borders rounded on one side*/
+    border-radius: 0 3px 3px 0;
+    /*Ensure no user select option*/
+    user-select: none;
+  }
+
+  /*Styling for the "next button"*/
+.next {
+  /*Set right margin - positions the button on the page*/
+    right: 15%;
+    /*Make border curved on one side*/
+    border-radius: 3px 0 0 3px;
+  }
+
+  /*Styling for the "previous button"*/
+  .prev{
+    /*Set right margin - positions the button on the page*/
+    right: 40%;
+  }
+
+  /*Styling for previous and next buttons on hover*/
+.prev:hover, .next:hover {
+  /*On hover, add a black background color with a bit of transparency*/
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /*Styling for caption text */
+.text {
+    /*Set text color*/
+    color: olivedrab;
+    /*Set text border and specify color, style, and width*/
+    -webkit-text-stroke: 0.4px black;
+    /*Set font size*/
+    font-size: 18px;
+    /*Set padding - space between the content and its container (shorthand)*/
+    padding: 5px 5px 5px 5px;
+    /*Give absolute positioning*/
+    position: absolute;
+    /*Set margins (lines 152 - 154)*/
+    margin-left: 45%;
+    bottom: 500px;
+    top:100px; 
+    /*Set container width*/
+    width: 50%;
+    /*Align text to left inside container*/
+    text-align:left;
+  }
+
+  /*Styling for all list items*/
+  li{
+    /*Set the top margin to provide space between list items*/
+    margin-top: 10px;
+  }
+
+  /*Styling for dots/bullets/indicators*/
+.dot {
+    /*On hover, change cursor style*/
+    cursor: pointer;
+    /*Set height*/
+    height: 15px;
+    /*Set width*/
+    width: 15px;
+    /*Set margins (shorthand)*/
+    margin: 0 2px;
+    /*Set background color*/
+    background-color: green;
+    /*Give dots a border and specify style, color, and width*/
+    border: solid white 1px;
+    /*Make dots round*/
+    border-radius: 50%;
+    /*Display as inline-block element*/
+    display: inline-block;
+    /*Set a transition and specify the element, time, and transition effect (ease)*/
+    transition: background-color 0.6s ease;
+  }
+
+  /*Styling for dot container*/
+  .dotContainer{
+    /*Set left margin*/
+    margin-left: 65%;
+  }
+
+  /*Styling for dot when active and on hover*/
+  .active, .dot:hover {
+    /*Change background color on active and hover*/
+    background-color:black;
+  }
+
+  /*Styling for fading animation */
+.fade {
+  /*Set animation name*/
+    animation-name: fade;
+    /*Set animation duration*/
+    animation-duration: 1.5s;
+  }
+
+  /*Styling for animation*/
+  @keyframes fade {
+    /*Set beginning color*/
+    from {opacity: .4}
+    /*Set end color*/
+    to {opacity: 1}
+  }
+
+  /*Use font face rule to add a locally installed font*/
+  @font-face {
+    font-family: Alumni;
+    src: url(Fonts/AlumniSansInlineOne-Italic.ttf)
+    format('truetype');
+    
+  }
+
+  
